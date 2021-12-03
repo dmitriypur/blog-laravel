@@ -37,7 +37,9 @@ class UpdateController extends Controller
         if(!isset($data['image'])){
             $data['image'] = $post->image;
         }else{
-            $data['image'] = Storage::disk('public')->put('/images', $data['image']);
+            Storage::disk('public')->delete($post->image);
+            $folder = date('Y-m-d');
+            $data['image'] = Storage::disk('public')->put("/images/{$folder}", $data['image']);
         }
 
 

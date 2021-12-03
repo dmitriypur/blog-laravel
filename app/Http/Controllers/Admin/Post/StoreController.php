@@ -35,10 +35,9 @@ class StoreController extends Controller
             unset($data['tag_ids']);
 
             if(isset($data['image'])){
-                $data['image'] = Storage::disk('public')->put('/images', $data['image']);
+                $folder = date('Y-m-d');
+                $data['image'] = Storage::disk('public')->put("/images/{$folder}", $data['image']);
             }
-
-            dd($request['image']);
 
             $post = Post::firstOrCreate($data);
 
@@ -48,6 +47,6 @@ class StoreController extends Controller
             abort(404);
         }
 
-        return redirect(route('admin.post.index'));
+        return redirect(route('admin.post.index'))->with('success', 'Пост добавлен');
     }
 }

@@ -15,7 +15,8 @@ class UpdateController extends Controller
 
 
         if(isset($data['photo'])){
-            $data['photo'] = Storage::disk('public')->put('/avatar', $data['photo']);
+            $folder = date('Y-m-d');
+            $data['photo'] = Storage::disk('public')->put("/avatar/{$folder}", $data['photo']);
         }
 
 //        dd($data['photo']);

@@ -58,7 +58,7 @@
                             @enderror
                         </div>
                         <div class="w-25">
-                            <img src="{{ asset('storage/'.auth()->user()->photo) }}" style="width: 100%;" alt="{{ auth()->user()->name }}">
+                            <img src="{{ asset('uploads/'.auth()->user()->photo) }}" style="width: 100%;" alt="{{ auth()->user()->name }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputFile">Изображение</label>

@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <h3 class="card-title">Редактировать запись</h3>
                 </div>
-                <form method="post" action="{{ route('admin.post.update', $post->id) }}"enctype="multipart/form-data" >
+                <form method="post" action="{{ route('admin.post.update', $post->id) }}" enctype="multipart/form-data">
                     @csrf
                     @method('patch')
                     <div class="card-body">
@@ -20,7 +20,8 @@
                         </div>
                         <div class="form-group">
                             <label>Текст</label>
-                            <textarea id="summernote" name="content" class="form-control" rows="10">{{ $post->content }}</textarea>
+                            <textarea id="summernote" name="content" class="form-control"
+                                      rows="10">{{ $post->content }}</textarea>
                             @error('content')
                             <p class="text-danger">{{ $message }}</p>
                             @enderror
@@ -30,8 +31,8 @@
                             <select name="category_id" class="form-control">
                                 @foreach($categories as $key => $category)
                                     <option
-                                    {{ $post->category_id == $key ? 'selected' : '' }}
-                                    value="{{ $key }}">{{ $category }}</option>
+                                            {{ $post->category_id == $key ? 'selected' : '' }}
+                                            value="{{ $key }}">{{ $category }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -39,28 +40,32 @@
                             <label>Multiple</label>
                             <select class="select2" name="tag_ids[]" multiple="multiple" data-placeholder="Выбрать тэги" style="width: 100%;">
                                 @foreach($tags as $key => $tag)
-                                    <option {{ is_array($post->tags->pluck('id')->toArray()) && in_array($key, $post->tags->pluck('id')->toArray()) ? ' selected' : '' }} value="{{ $key }}">{{ $tag }}</option>
+                                    <option @if(in_array($key, $post->tags->pluck('id')->all())) selected @endif value="{{ $key }}">{{ $tag }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="w-25">
-                            <img src="{{ asset('storage/'.$post->image) }}" style="width: 100%;" alt="{{ $post->title }}">
+                            <img src="{{ asset('uploads/'.$post->image) }}" style="width: 100%;"
+                                 alt="{{ $post->title }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputFile">Изображение</label>
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input name="image" type="file" class="custom-file-input" id="image" value="{{ $post->image }}">
+                                    <input name="image" type="file" class="custom-file-input" id="image"
+                                           value="{{ $post->image }}">
                                     <label class="custom-file-label" for="image">Выбрать</label>
                                 </div>
                             </div>
                         </div>
                         <div class="form-check">
-                            <input id="is_published" {{ $post->is_published ? 'checked' : '' }} class="form-check-input" type="checkbox" name="is_published">
+                            <input id="is_published" {{ $post->is_published ? 'checked' : '' }} class="form-check-input"
+                                   type="checkbox" name="is_published">
                             <label for="is_published" class="form-check-label">Опубликовать</label>
                         </div>
                         <div class="form-check">
-                            <input id="favorite" {{ $post->favorite ? 'checked' : '' }} class="form-check-input" type="checkbox" name="favorite">
+                            <input id="favorite" {{ $post->favorite ? 'checked' : '' }} class="form-check-input"
+                                   type="checkbox" name="favorite">
                             <label for="favorite" class="form-check-label">Вывести на главной</label>
                         </div>
                     </div>
