@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Validator;
-use Auth;
 use App\Comment;
 use App\Post;
+use Auth;
+use Illuminate\Http\Request;
+use Validator;
 
 
 class CommentController extends Controller

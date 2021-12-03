@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Post;
 use App\User;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Comment
