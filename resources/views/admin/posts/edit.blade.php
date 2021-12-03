@@ -45,7 +45,7 @@
                             </select>
                         </div>
                         <div class="w-25">
-                            <img src="{{ asset('uploads/'.$post->image) }}" style="width: 100%;"
+                            <img src="{{ $post->getImage() }}" style="width: 100%;"
                                  alt="{{ $post->title }}">
                         </div>
                         <div class="form-group">

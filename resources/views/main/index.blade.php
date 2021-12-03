@@ -10,7 +10,7 @@
                         <div class="col-md-12">
                             <div class="post post-thumb">
                                 <a class="post-img" href="{{ route('post.show', $postFavorite->id) }}"><img
-                                            src="{{ asset('storage/' . $postFavorite->image) }}"
+                                            src="{{ asset('uploads/' . $postFavorite->image) }}"
                                             alt=""></a>
                                 <div class="post-body">
                                     <div class="post-meta">
@@ -79,7 +79,7 @@
                     <div class="col-md-4">
                         <div class="post">
                             <a class="post-img" href="{{ route('post.show', $post->id) }}">
-                                <img src="{{ asset('storage/'. $post->image) }}" alt="">
+                                <img src="{{ asset('uploads/'. $post->image) }}" alt="">
                             </a>
                             <div class="post-body">
                                 <div class="post-meta">
