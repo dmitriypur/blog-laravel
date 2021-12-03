@@ -28,18 +28,18 @@
                         <div class="form-group">
                             <label>Категория</label>
                             <select name="category_id" class="form-control">
-                                @foreach($categories as $category)
+                                @foreach($categories as $key => $category)
                                     <option
-                                    {{ $post->category_id == $category->id ? 'selected' : '' }}
-                                    value="{{ $category->id }}">{{ $category->title }}</option>
+                                    {{ $post->category_id == $key ? 'selected' : '' }}
+                                    value="{{ $key }}">{{ $category }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Multiple</label>
                             <select class="select2" name="tag_ids[]" multiple="multiple" data-placeholder="Выбрать тэги" style="width: 100%;">
-                                @foreach($tags as $tag)
-                                    <option {{ is_array($post->tags->pluck('id')->toArray()) && in_array($tag->id, $post->tags->pluck('id')->toArray()) ? ' selected' : '' }} value="{{ $tag->id }}">{{ $tag->title }}</option>
+                                @foreach($tags as $key => $tag)
+                                    <option {{ is_array($post->tags->pluck('id')->toArray()) && in_array($key, $post->tags->pluck('id')->toArray()) ? ' selected' : '' }} value="{{ $key }}">{{ $tag }}</option>
                                 @endforeach
                             </select>
                         </div>
