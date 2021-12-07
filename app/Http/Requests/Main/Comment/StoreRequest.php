@@ -25,6 +25,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'message' => ['string'],
+            'parent_id' => 'nullable',
             'is_published' => [''],
         ];
     }

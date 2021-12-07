@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Comment;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -31,9 +32,12 @@ class Post extends Model
         return $this->belongsToMany(User::class, 'post_user_likes', 'post_id', 'user_id');
     }
 
+
     public function comments(){
-        return $this->hasMany(Comment::class, 'post_id', 'id');
+        return $this->hasMany(Comment::class);
     }
+
+
 
     public function user(){
         return $this->belongsTo(User::class, 'user_id', 'id');

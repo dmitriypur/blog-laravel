@@ -73,7 +73,6 @@
                         </a>
                     </div>
                     <!-- ad -->
-
                     <!-- author -->
                     <div class="section-row">
                         <div class="post-author">
@@ -94,62 +93,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- /author -->
 
-                    <!-- comments -->
-                    <div class="section-row">
-
-                        <div class="post-comments">
-                            <!-- comment -->
-                            @foreach($post->comments as $comment)
-                                @if($comment->is_published)
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <img class="media-object" src="./img/avatar.png" alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="media-heading">
-                                                <h4>{{ $comment->user->name  }}</h4>
-                                                <span class="time">{{ $comment->created_at }}</span>
-                                                <a href="#" class="reply">Ответить</a>
-                                            </div>
-                                            <p>{{ $comment->message }}</p>
-                                        </div>
-                                    </div>
-                                @endif
-                            @endforeach
-                        <!-- /comment -->
-                        </div>
-                    </div>
-                    <!-- /comments -->
-
-                    <!-- reply -->
-                    <div class="section-row">
-                        @guest()
-                            <div class="section-title">
-                                <h2>Зарегистрируйтесь для того чтобы оставить комментарий</h2>
-                            </div>
-                        @endguest
-                        @auth()
-                            <div class="section-title">
-                                <h2>Оставить комментарий</h2>
-                            </div>
-                            <form action="{{ route('post.comment.store', $post->id) }}" method="post"
-                                  class="post-reply">
-                                @csrf
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <textarea class="input" name="message" placeholder="Сообщение"></textarea>
-                                        </div>
-                                        <button class="primary-button">Отправить</button>
-                                    </div>
-                                </div>
-                            </form>
-                        @endauth
-                    </div>
-                    <!-- /reply -->
                 </div>
                 <!-- /Post content -->
 

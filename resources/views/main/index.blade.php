@@ -40,7 +40,7 @@
                                 @foreach($categories as $category)
                                     <li><a href="{{ route('category.post.index', $category->id) }}"
                                            class="cat-1">{{ $category->title }}
-                                            <span>{{ $category->posts->count() }}</span></a></li>
+                                            </a></li>
                                 @endforeach
                             </ul>
                         </div>

@@ -134,5 +134,11 @@
 
     // =========== Лайки ===========
 
+    // =========== Комментарии ===========
+    $('.reply').on('click', function(e){
+        let id = $(this).attr('id')
+
+        $('#parent_id').val(id)
+    })
 
 })(jQuery);

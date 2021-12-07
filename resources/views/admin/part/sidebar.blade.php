@@ -30,7 +30,6 @@
                         <i class="nav-icon fas fa-file-alt"></i>
                         <p>
                             Записи
-                            <span class="badge badge-info right">{{ \App\Models\Post::all()->count() }}</span>
                         </p>
                     </a>
                 </li>
@@ -39,7 +38,6 @@
                         <i class="nav-icon fas fa-th-list"></i>
                         <p>
                             Категории
-                            <span class="badge badge-info right">{{ \App\Models\Category::all()->count() }}</span>
                         </p>
                     </a>
                 </li>
@@ -48,7 +46,6 @@
                         <i class="nav-icon fas fa-tags"></i>
                         <p>
                             Тэги
-                            <span class="badge badge-info right">{{ \App\Models\Tag::all()->count() }}</span>
                         </p>
                     </a>
                 </li>
@@ -57,7 +54,6 @@
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             Пользователи
-                            <span class="badge badge-info right">{{ \App\Models\User::all()->count() }}</span>
                         </p>
                     </a>
                 </li>
@@ -66,7 +62,6 @@
                         <i class="nav-icon fas fa-comments"></i>
                         <p>
                             Комментарии
-                            <span class="badge badge-info right">{{ \App\Models\Comment::all()->count() }}</span>
                         </p>
                     </a>
                 </li>

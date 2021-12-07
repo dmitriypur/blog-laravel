@@ -652,7 +652,6 @@ RESPONSIVE
 ===========================================================*/
  .sticky-container {
      position: relative;
-     padding-left: 80px;
 }
  .sticky-container .sticky-shares {
      position: absolute;

@@ -8,7 +8,7 @@
                 <div class="col-md-8">
                     <ul>
                         @foreach($categories as $category)
-                            <li><a href="{{ route('category.post.index', $category->id) }}" class="cat-1">{{ $category->title }}<span>{{ $category->posts->count() }}</span></a></li>
+                            <li><a href="{{ route('category.post.index', $category->id) }}" class="cat-1">{{ $category->title }}</a></li>
                         @endforeach
                     </ul>
                 </div>

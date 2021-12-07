@@ -39,6 +39,6 @@ return [
  * Сразу показывать новый комментарий без модерации (true)
  * При значении false в поле stаtus сохраняется 0 и комментарий не отображается
  */
-'show_immediately' => true,	
+'show_immediately' => false,
 	
 ];
