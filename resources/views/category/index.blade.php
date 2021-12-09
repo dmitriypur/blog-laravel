@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@section('title', 'Категории')
 @section('content')
     <!-- section -->
     <div class="section">

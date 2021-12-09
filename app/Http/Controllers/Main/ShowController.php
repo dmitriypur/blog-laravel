@@ -15,9 +15,10 @@ class ShowController extends Controller
     {
         $date = Carbon::parse($post->created_at);
         $tags = Tag::all();
-        $categories = Category::all();
+        $categories = Category::with('posts')->get();
         $relatedPosts = Post::where('category_id', $post->category_id)
             ->where('id', '!=', $post->id)
+            ->with('category')
             ->get()
             ->take(2);
         $likedPosts = Post::withCount('likedUsers')->orderby('liked_users_count', 'DESC')->get()->take(4);

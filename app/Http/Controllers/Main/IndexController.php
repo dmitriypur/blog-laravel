@@ -12,9 +12,9 @@ class IndexController extends Controller
     public function __invoke()
     {
 
-        $posts = Post::where('is_published', 1)->paginate(5);
-        $postFavorite = Post::where('favorite', 1)->first();
-        $categories = Category::all();
+        $posts = Post::where('is_published', 1)->with('category', 'likes')->paginate(5);
+        $postFavorite = Post::where('favorite', 1)->with('category')->first();
+        $categories = Category::with('posts')->get();
         $tags = Tag::all();
 
         return view('main.index', compact('posts', 'categories', 'tags', 'postFavorite'));

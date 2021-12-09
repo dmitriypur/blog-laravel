@@ -1,6 +1,5 @@
-<!-- Header -->
+
 <header id="header">
-    <!-- Nav -->
     <div id="nav">
         <!-- Main Nav -->
         <div id="nav-fixed">
@@ -82,8 +81,6 @@
 
         <!-- Aside Nav -->
         <div id="nav-aside">
-            <!-- nav -->
-            @include('part.menu')
 
             <!-- /nav -->
 
@@ -134,6 +131,10 @@
         </div>
         <!-- Aside Nav -->
     </div>
-    <!-- /Nav -->
+    @if(request()->route()->getName() == 'category.index')
+
+        <h1>Hello!!!</h1>
+
+    @endif
+
 </header>
-<!-- /Header -->
